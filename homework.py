@@ -50,28 +50,29 @@ tickets = []
 
 while (i != exam_size):
     process = copy.deepcopy(random_gen(res))
-    # print(process)
+    
     if (flag == 0) and (int(process[2]) < difficulty):
         ticket_constract.append(process)
-        #print(ticket_constract)
-        #print(ticket_constract[0][2])
+    
         flag = flag + 1
     
     else:
     
-        # print(ticket_constract)
-        # print(ticket_constract[0][2])
         if(int(process[2]) == (difficulty - int(ticket_constract[0][2]))) and (process[3] != ticket_constract[0][3]): 
             ticket_constract.append(process)
-            # print(ticket_constract)
+            
             tickets.append(ticket_constract[:])
-            print(tickets)
             i = i + 1
             del ticket_constract[:]
             flag = 0
 			
-print()
-print()
-print()
-print("This is tickets:")
-print(tickets)
+
+number_ticket = 0			
+for i in tickets:
+
+    number_ticket = number_ticket + 1
+    output.write("------------------------ Number № " + str(number_ticket) + " ------------------------\n")
+    for j in i:
+	    output.write(str(j[0])+"\n")
+	
+    output.write("------------------------------------------------------------\n")
