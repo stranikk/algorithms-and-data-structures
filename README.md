@@ -43,7 +43,10 @@ python /homework.py [input file (\input.txt)] [output file (\output.txt)]
 *Формат задания вопроса:*
 
 What is the Hamming code?
+
 Coding Information
+
 1
+
 Theory
 
