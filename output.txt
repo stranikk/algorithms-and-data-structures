@@ -1,0 +1,20 @@
+------------------------ Number ¹ 1 ------------------------
+What is the combination with repetitions?
+Of the 11 students, four people are selected on a monthly basis. Is it possible to organize a duty officer so that for a year no one is on duty with anyone twice?
+------------------------------------------------------------
+------------------------ Number ¹ 2 ------------------------
+Of the 11 students, four people are selected on a monthly basis. Is it possible to organize a duty officer so that for a year no one is on duty with anyone twice?
+What is the Hamming code?
+------------------------------------------------------------
+------------------------ Number ¹ 3 ------------------------
+Of the 11 students, four people are selected on a monthly basis. Is it possible to organize a duty officer so that for a year no one is on duty with anyone twice?
+What is the combination with repetitions?
+------------------------------------------------------------
+------------------------ Number ¹ 4 ------------------------
+Morse code allows you to encode characters for messages on the radio by specifying a combination of dots and dashes. How many different characters (numbers, letters, punctuation marks, etc.) can be encoded using the Morse code of at least four and no more than six signals (dots and dashes)?
+How many different characters (numbers, letters, punctuation marks, etc.) can be encoded using the Morse code of at least four and no more than six signals (dots and dashes)?
+------------------------------------------------------------
+------------------------ Number ¹ 5 ------------------------
+What is the combination with repetitions?
+Of the 11 students, four people are selected on a monthly basis. Is it possible to organize a duty officer so that for a year no one is on duty with anyone twice?
+------------------------------------------------------------
