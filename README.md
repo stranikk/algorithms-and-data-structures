@@ -50,3 +50,4 @@ Coding Information
 
 Theory
 
+В репозитории прикреплен пример входного файла input.txt! 
