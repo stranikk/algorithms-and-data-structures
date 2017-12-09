@@ -3,7 +3,7 @@ class Exam(object):
     
     __theory = []
     __practise = []
-    __if_bilet = []
+    __run_board = []
     __result = []
     __exam_size = 0
     __delta = 0
@@ -38,25 +38,27 @@ class Exam(object):
         self.__theory.sort()
         self.__practise.sort()
 
-    def get_if_bilet(self):
-        return self.__if_bilet
+    
     
 
     def add_bilet(self):
         buffer_bilet = []
         flag = False
         i = 0
+        run_left_board = self.__run_board[0]
+        run_right_board = self.__run_board[1]
+
         while(i!=2):
             if (i == 0):
                 num = random.randint(0,len(self.__theory)-1)
-                if (self.__theory[num] < self.__if_bilet[0]):
+                if (self.__theory[num] < run_left_board):
                     buffer_bilet.append(self.__theory[num])
                     i = i + 1
                        
             
             if (i == 1):
                 for it in self.__practise:
-                    if (((it+buffer_bilet[0])>self.__if_bilet[0]) and ((it+buffer_bilet[0])<self.__if_bilet[1])):
+                    if (((it+buffer_bilet[0])>run_left_board) and ((it+buffer_bilet[0])<run_right_board)):
                         buffer_bilet.append(it)
                         i = i + 1
                         break
@@ -65,24 +67,32 @@ class Exam(object):
                     buffer_bilet.pop()
                         
         self.__result.append(buffer_bilet)
-        sum_bilet = buffer_bilet[0] + buffer_bilet[1]
+        theory_question = buffer_bilet[0]
+        practise_questions = buffer_bilet[1]
+
+        sum_bilet = theory_question + practise_questions
 		
-        left_board = sum_bilet - ((self.__delta)/100) * sum_bilet
-        right_board = sum_bilet + ((self.__delta)/100) * sum_bilet
-		
-        if (int(round(left_board)) > self.__if_bilet[0]):
-            self.__if_bilet[0] = int(round(left_board))
-        if (int(round(right_board)) < self.__if_bilet[1]):
-            self.__if_bilet[1] = int(round(right_board))
+        calc_delta_of_bilet = ((self.__delta)/100) * sum_bilet
+        
+        left_board_bilet = sum_bilet - calc_delta_of_bilet
+        right_board_bilet = sum_bilet + calc_delta_of_bilet
+
+        
+        if (int(round(left_board_bilet)) > run_left_board):
+            self.__run_board[0] = int(round(left_board_bilet))
+        if (int(round(right_board_bilet)) < run_right_board):
+            self.__run_board[1] = int(round(right_board_bilet))
 
     def calc_mediana(self):
-        mediana1 = int(round(len(self.__theory)/2))
-        mediana2 = int(round(len(self.__practise)/2))
+        theory_mediana = int(round(len(self.__theory)/2))
+        practise_mediana = int(round(len(self.__practise)/2))
 		
-        sum_mediana = self.__theory[mediana1] + self.__practise[mediana2]
+        sum_mediana = self.__theory[theory_mediana] + self.__practise[practise_mediana]
 		
-        left_mediana = sum_mediana - (self.__delta)/100 * sum_mediana
-        right_mediana = sum_mediana + (self.__delta)/100 * sum_mediana
+        calc_delta_of_mediana = (self.__delta)/100 * sum_mediana
+
+        left_mediana = sum_mediana - calc_delta_of_mediana
+        right_mediana = sum_mediana + calc_delta_of_mediana
 		
-        self.__if_bilet.append(int(round(left_mediana)))
-        self.__if_bilet.append(int(round(right_mediana)))
+        self.__run_board.append(int(round(left_mediana)))
+        self.__run_board.append(int(round(right_mediana)))
