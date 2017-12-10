@@ -1,4 +1,5 @@
 import random
+import sys
 class Exam(object):
     
     __theory = []
@@ -45,8 +46,10 @@ class Exam(object):
         buffer_bilet = []
         flag = False
         i = 0
+        k = 0
         run_left_board = self.__run_board[0]
         run_right_board = self.__run_board[1]
+        bruteforse_len = len(self.__practise) * len(self.__theory)
 
         while(i!=2):
             if (i == 0):
@@ -65,7 +68,12 @@ class Exam(object):
                 if(len(buffer_bilet)==1):
                     i = i - 1
                     buffer_bilet.pop()
-                        
+            k = k + 1
+
+            if (k==bruteforse_len):
+                print("Error: Unable to create the exam. Choose another delta or change the number of questions")
+                sys.exit()
+              
         self.__result.append(buffer_bilet)
         theory_question = buffer_bilet[0]
         practise_questions = buffer_bilet[1]
@@ -88,7 +96,7 @@ class Exam(object):
         practise_mediana = int(round(len(self.__practise)/2))
 		
         sum_mediana = self.__theory[theory_mediana] + self.__practise[practise_mediana]
-		
+        print(sum_mediana)
         calc_delta_of_mediana = (self.__delta)/100 * sum_mediana
 
         left_mediana = sum_mediana - calc_delta_of_mediana
