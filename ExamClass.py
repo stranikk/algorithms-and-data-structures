@@ -96,7 +96,7 @@ class Exam(object):
         practise_mediana = int(round(len(self.__practise)/2))
 		
         sum_mediana = self.__theory[theory_mediana] + self.__practise[practise_mediana]
-        print(sum_mediana)
+        
         calc_delta_of_mediana = (self.__delta)/100 * sum_mediana
 
         left_mediana = sum_mediana - calc_delta_of_mediana
