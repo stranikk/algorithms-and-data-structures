@@ -1,40 +1,40 @@
 ------------------------ Number № 1 ------------------------
-48
-28
+What is NTFS?
+Solve the problem with fore movable blocks
 ------------------------------------------------------------
 ------------------------ Number № 2 ------------------------
-53
-23
+What is Stackoverflow?
+Write the parser for the web traffic
 ------------------------------------------------------------
 ------------------------ Number № 3 ------------------------
-44
-32
+What is the uncertainty principle?
+Simplify the sum with the binomial theorem
 ------------------------------------------------------------
 ------------------------ Number № 4 ------------------------
-40
-38
+What is Schrodinger's cat?
+Spend brute force attack on the web-site database, given a dictionary A={qwerty,admin...}
 ------------------------------------------------------------
 ------------------------ Number № 5 ------------------------
-49
-28
+Who are the ewoks and what was they doing on Endor?
+Count the number of correct bracket sequences of length twelve
 ------------------------------------------------------------
 ------------------------ Number № 6 ------------------------
-38
-38
+What is encapsulation?
+Calculate the flight path of the ball
 ------------------------------------------------------------
 ------------------------ Number № 7 ------------------------
-24
-52
+What is the special theory of relativity?
+Dynamic programming solve the task about a backpack
 ------------------------------------------------------------
 ------------------------ Number № 8 ------------------------
-58
-20
+What are binomial coefficients?
+Think of the meme on the topic of bitcoin
 ------------------------------------------------------------
 ------------------------ Number № 9 ------------------------
-31
-45
+Where and how to apply SQL injections?
+Solve the problem with fore movable blocks
 ------------------------------------------------------------
 ------------------------ Number № 10 ------------------------
-51
-28
+What is encapsulation?
+Calculate the flight path of the ball
 ------------------------------------------------------------

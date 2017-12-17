@@ -54,14 +54,14 @@ class Exam(object):
         while(i!=2):
             if (i == 0):
                 num = random.randint(0,len(self.__theory)-1)
-                if (self.__theory[num] < run_left_board):
+                if (self.__theory[num][0] < run_left_board):
                     buffer_bilet.append(self.__theory[num])
                     i = i + 1
                        
             
             if (i == 1):
                 for it in self.__practise:
-                    if (((it+buffer_bilet[0])>run_left_board) and ((it+buffer_bilet[0])<run_right_board)):
+                    if (((it[0]+buffer_bilet[0][0])>run_left_board) and ((it[0]+buffer_bilet[0][0])<run_right_board) and (int(it[2])!=int(buffer_bilet[0][2]))):
                         buffer_bilet.append(it)
                         i = i + 1
                         break
@@ -75,8 +75,8 @@ class Exam(object):
                 sys.exit()
               
         self.__result.append(buffer_bilet)
-        theory_question = buffer_bilet[0]
-        practise_questions = buffer_bilet[1]
+        theory_question = buffer_bilet[0][0]
+        practise_questions = buffer_bilet[1][0]
 
         sum_bilet = theory_question + practise_questions
 		
@@ -95,7 +95,7 @@ class Exam(object):
         theory_mediana = int(round(len(self.__theory)/2))
         practise_mediana = int(round(len(self.__practise)/2))
 		
-        sum_mediana = self.__theory[theory_mediana] + self.__practise[practise_mediana]
+        sum_mediana = self.__theory[theory_mediana][0] + self.__practise[practise_mediana][0]
         
         calc_delta_of_mediana = (self.__delta)/100 * sum_mediana
 

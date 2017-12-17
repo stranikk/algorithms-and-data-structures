@@ -9,17 +9,18 @@ def parser(data,get_exam):
         parser.append(line[0 : len(line)-1])
 
     for it in parser:
-        
         if ((len(it)!=0)and(flag==True)):
-            res = re.findall(r'\d+', it)
-            if((len(res)!=2) or (int(res[1])!=0) and (int(res[1])!=1)):
+            res = [int(i) for i in re.findall(r'\d+\s+', it)]
+            test = re.split(r'[\s+]?\d+\s+\d+\s+\d+\s+', it, maxsplit = 1)
+            res.append(test[1])
+            if((len(res)!=4) or (int(res[1])!=0) and (int(res[1])!=1)):
                 print("Error: incorrect format question")
                 sys.exit()
             else:
                 if (int(res[1])==0):
-                    get_exam.add_theory(int(res[0]))
+                    get_exam.add_theory(res)
                 if (int(res[1])==1):
-                    get_exam.add_practise(int(res[0]))
+                    get_exam.add_practise(res)
 
         if ((len(it)!=0)and(flag==False)):
             flag = True
@@ -43,10 +44,12 @@ def print_exam(data,get_exam):
     CONST_PARAM = "------------------------"
     CONST_END_PARAM = "------------------------\n"
     CONST_END = "------------------------------------------------------------\n"
+    
     for it in get_exam.get_result():
+
         number_bilet = number_bilet + 1
         data.write('{0} {1} {2} {3}'.format(CONST_PARAM,"Number №",str(number_bilet),CONST_END_PARAM))
 
         for j in it:
-            data.write(str(j)+"\n")
+            data.write(str(j[3])+"\n")
         data.write('{0}'.format(CONST_END))
